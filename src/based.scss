@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@charset 'UTF-8';
 
 // Dependencies
 @import 'config';
@@ -6,19 +6,19 @@
 @import 'lib/functions';
 
 // Modules
-@import "modules/root";
-@import "modules/type";
-@import "modules/grid";
-@import "modules/position";
-@import "modules/text";
-@import "modules/display";
-@import "modules/float";
-@import "modules/spacing";
-@import "modules/bg";
-@import "modules/list";
-@import "modules/media";
-@import "modules/clearfix";
-@import "modules/helpers";
+@import 'modules/root';
+@import 'modules/type';
+@import 'modules/grid';
+@import 'modules/position';
+@import 'modules/text';
+@import 'modules/display';
+@import 'modules/float';
+@import 'modules/spacing';
+@import 'modules/bg';
+@import 'modules/list';
+@import 'modules/media';
+@import 'modules/clearfix';
+@import 'modules/helpers';
 
 // Static module includes
 @mixin based-core {
