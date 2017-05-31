@@ -1,0 +1,41 @@
+@mixin based-text($sfx) {
+  .text-left#{$sfx} {
+    text-align: left;
+  }
+
+  .text-right#{$sfx} {
+    text-align: right;
+  }
+
+  .text-center#{$sfx} {
+    text-align: center;
+  }
+
+  .text-nowrap#{$sfx} {
+    white-space: nowrap;
+  }
+
+  .text-bold#{$sfx} {
+    font-weight: bold;
+  }
+
+  .text-normal#{$sfx} {
+    font-weight: normal;
+  }
+
+  .text-italic#{$sfx} {
+    font-style: italic;
+  }
+
+  .text-caps#{$sfx} {
+    text-transform: capitalize;
+  }
+
+  .text-upper#{$sfx} {
+    text-transform: uppercase;
+  }
+
+  .text-lower#{$sfx} {
+    text-transform: lowercase;
+  }
+}

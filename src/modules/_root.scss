@@ -1,0 +1,7 @@
+@mixin based-root {
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+  }
+}

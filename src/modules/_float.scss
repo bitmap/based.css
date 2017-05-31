@@ -1,0 +1,9 @@
+@mixin based-float($sfx) {
+  .float-left#{$sfx} {
+    float: left;
+  }
+
+  .float-right#{$sfx} {
+    float: right;
+  }
+}

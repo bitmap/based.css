@@ -1,0 +1,101 @@
+@mixin based-grid() {
+  .wrap {
+    padding-left: ($based_grid-gutter-width);
+    padding-right: ($based_grid-gutter-width);
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $based_grid-max-width;
+  }
+
+  .flex-row,
+  .row {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .row {
+    margin-left: (($based_grid-gutter-width)) * -1;
+    margin-right: (($based_grid-gutter-width)) * -1;
+  }
+
+  .row--stack {
+    flex-flow: column wrap;
+  }
+
+  .row--reverse {
+    flex-flow: row-reverse wrap;
+  }
+
+  .col {
+    position: relative;
+    padding-left: ($based_grid-gutter-width);
+    padding-right: ($based_grid-gutter-width);
+    flex: 1;
+    max-width: 100%;
+  }
+}
+@mixin based-flex($sfx) {
+   @for $i from 0 through $based_grid-columns{
+    .span-#{$i}#{$sfx} {
+      flex: 0 0 percentage((1 / $based_grid-columns) * $i);
+      max-width: percentage((1 / $based_grid-columns) * $i);
+    }
+
+    .offset-#{$i}#{$sfx} {
+      margin-left: percentage((1 / $based_grid-columns)) * $i;
+    }
+
+    .push-#{$i}#{$sfx} {
+      left: percentage((1 / $based_grid-columns)) * $i;
+    }
+
+    .pull-#{$i}#{$sfx} {
+      right: percentage((1 / $based_grid-columns)) * $i;
+    }
+
+    .order-#{$i}#{$sfx} {
+      order: #{$i};
+    }
+  }
+
+  .align-top#{$sfx} {
+    &.col {
+      align-self: flex-start;
+    }
+    align-items: flex-start;
+  }
+
+  .align-middle#{$sfx} {
+    &.col {
+      align-self: center;
+    }
+    align-items: center;
+  }
+
+  .align-bottom#{$sfx} {
+    &.col {
+      align-self: flex-end;
+    }
+    align-items: flex-end;
+  }
+
+  .align-left#{$sfx} {
+    justify-content: flex-start;
+  }
+
+  .align-center#{$sfx} {
+    justify-content: center;
+  }
+
+  .align-right#{$sfx} {
+    justify-content: flex-end;
+  }
+
+  .space-around#{$sfx} {
+    justify-content: space-around;
+  }
+
+  .space-between#{$sfx} {
+    justify-content: space-between;
+  }
+}

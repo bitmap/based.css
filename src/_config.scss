@@ -1,0 +1,46 @@
+$based: 16;
+
+// Font size
+$based_font-size: 1rem;
+$based_font-scale: 1.5;
+$based_spacing: 1rem;
+
+// Borders
+$based_border-width: 1px;
+
+// Line-height
+$based_line-height: 1.5;
+$based_headline-line-height: 1.125;
+$based_paragraph-line-height: $based_line-height;
+
+// Grid settings
+// sm - 512px @ 16px
+// md - 768px @ 16px
+// lg - 1024px @ 16px
+// xl - 1280px @ 16px
+$based_grid-breakpoints: (
+  xs: 0,
+  sm: 32rem,
+  md: 48rem,
+  lg: 64rem,
+  xl: 80rem,
+) !default;
+
+$based_grid-columns: 8;
+$based_grid-max-width: 64rem;
+$based_grid-gutter-width: $based_spacing;
+
+// Spacing
+$based_spacing-multiplier: 4;
+$based_spacing-sides: (
+  default: default,
+  horizontal: horizontal,
+  vertical: vertical,
+  t: top,
+  b: bottom,
+  l: left,
+  r: right,
+) !default;
+
+// Maps for looping
+$based_breakpoints: map_keys($based_grid-breakpoints) !default;

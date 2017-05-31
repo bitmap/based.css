@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+// Dependencies
+@import 'config';
+@import 'lib/mixins';
+@import 'lib/functions';
+
+// Modules
+@import "modules/root";
+@import "modules/type";
+@import "modules/grid";
+@import "modules/position";
+@import "modules/text";
+@import "modules/display";
+@import "modules/float";
+@import "modules/spacing";
+@import "modules/bg";
+@import "modules/list";
+@import "modules/media";
+@import "modules/clearfix";
+@import "modules/helpers";
+
+// Static module includes
+@mixin based-core {
+  @include based-root;
+  @include based-type;
+  @include based-clearfix;
+  @include based-helpers;
+  @include based-bg;
+  @include based-list;
+  @include based-media;
+  @include based-grid;
+}
+
+// Responsive module includes
+@mixin based-responsive($suffix) {
+  @include based-flex($suffix);
+  @include based-position($suffix);
+  @include based-text($suffix);
+  @include based-display($suffix);
+  @include based-float($suffix);
+  @include based-spacing('padding', $based_spacing, $based_spacing-multiplier, $suffix);
+  @include based-spacing('margin', $based_spacing, $based_spacing-multiplier, $suffix);
+}
+
+// Magic
+@each $breakpoint in $based_breakpoints {
+  @include breakpoint($breakpoint){
+    @if $breakpoint != 'xs' {
+      $responsiveSuffix: '#{\@}#{$breakpoint}';
+      @include based-responsive($responsiveSuffix);
+    }
+    @else {
+      // Static
+      @include based-core;
+      // Responsive
+      $responsiveSuffix: '';
+      @include based-responsive($responsiveSuffix);
+    }
+  }
+}

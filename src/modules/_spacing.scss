@@ -1,0 +1,71 @@
+@mixin all-sides($root, $pfx, $sfx, $total, $i) {
+   @if ($root == 'padding'){}
+  @else if ($i == 0) {
+    .#{$pfx}-auto#{$sfx} {
+      #{$root}: auto;
+    }
+  }
+
+  .#{$pfx}#{$i}#{$sfx} {
+    #{$root}: $total;
+  }
+}
+@mixin two-sides($side, $side1, $side2, $root, $pfx, $sfx, $total, $i) {
+   @if ($root == 'padding'){}
+  @else if ($i == 0) {
+    .#{$pfx}#{$side}-auto#{$sfx} {
+      #{$root}-#{$side1}: auto;
+      #{$root}-#{$side2}: auto;
+    }
+  }
+
+  .#{$pfx}#{$side}#{$i}#{$sfx} {
+    #{$root}-#{$side1}: $total;
+    #{$root}-#{$side2}: $total;
+  }
+}
+@mixin one-side($sides, $side, $root, $pfx, $sfx, $total, $i) {
+   @if ($root == 'padding'){}
+  @else if ($i == 0) {
+    .#{$pfx}#{$side}-auto#{$sfx} {
+      #{$root}-#{$sides}: auto;
+    }
+  }
+
+  .#{$pfx}#{$side}#{$i}#{$sfx} {
+    #{$root}-#{$sides}: $total;
+  }
+}
+// Spacing
+@mixin based-spacing($root, $value, $n, $sfx) {
+  // $pfx will change the prefix class
+  $pfx: '';
+  @if ($root == 'margin') {
+    $pfx: 'm';
+  }
+  @else if ($root == 'padding') {
+    $pfx: 'p';
+  }
+  @else {
+     @error 'Sorry, but `#{$root}` is not supported.';
+  }
+  // Generate classes
+  @each $side in map_keys($based_spacing-sides) {
+    $sides: map-get($based_spacing-sides, #{$side});
+    @for $i from 0 through $n {
+      $total: ($value * $i);
+      @if ($side == default) {
+         @include all-sides($root, $pfx, $sfx, $total, $i);
+      }
+      @else if ($side == vertical) {
+         @include two-sides( 'y', top, bottom, $root, $pfx, $sfx, $total, $i);
+      }
+      @else if ($side == horizontal) {
+         @include two-sides( 'x', left, right, $root, $pfx, $sfx, $total, $i);
+      }
+      @else {
+         @include one-side($sides, $side, $root, $pfx, $sfx, $total, $i);
+      }
+    }
+  }
+}

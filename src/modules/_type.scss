@@ -1,0 +1,44 @@
+@mixin based-type {
+  %based_headline-line-height {
+    line-height: $based_headline-line-height;
+  }
+
+  %based_paragraph-line-height {
+    line-height: $based_paragraph-line-height;
+  }
+
+  .h1 {
+    @include font-size(h1);
+    @extend %based_headline-line-height;
+  }
+
+  .h2 {
+    @include font-size(h2);
+    @extend %based_headline-line-height;
+  }
+
+  .h3 {
+    @include font-size(h3);
+    @extend %based_headline-line-height;
+  }
+
+  .h4 {
+    @include font-size(h4);
+    @extend %based_headline-line-height;
+  }
+
+  .h5 {
+    @include font-size(base);
+    @extend %based_headline-line-height;
+  }
+
+  .p {
+    @include font-size(base);
+    @extend %based_paragraph-line-height;
+  }
+
+  .sm {
+    @include font-size(sm);
+    @extend %based_paragraph-line-height;
+  }
+}

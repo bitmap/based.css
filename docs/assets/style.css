@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: 1.125;
+}
+
+h1 {
+  font-size: 81px;
+  font-size: 5.0625rem; }
+
+h2 {
+  font-size: 54px;
+  font-size: 3.375rem; }
+
+h3 {
+  font-size: 36px;
+  font-size: 2.25rem; }
+
+h4 {
+  font-size: 24px;
+  font-size: 1.5rem; }
+
+h5 {
+  font-size: 16px;
+  font-size: 1rem; }
+
+p {
+  font-size: 16px;
+  font-size: 1rem; }
+
+a {
+  color: rgb(74, 84, 239);
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(239, 84, 74);
+}
+
+nav ul {
+  margin-top: 7rem;
+  list-style: none;
+  padding: 0;
+}
+
+code {
+  background: whitesmoke;
+  border-radius: 3px;
+  color: rgb(239, 84, 74);
+  display: inline;
+  font-family: 'Source Code Pro', 'Menlo', monospace;
+  font-size: 0.9rem;
+  font-weight: normal;
+  line-height: 1;
+  margin: 0;
+  padding: 2px 6px;
+  white-space: nowrap;
+}
+
+td code {
+  background: transparent;
+}
+
+table td,
+table th {
+  padding: 1rem;
+}
+
+table th {
+  border-bottom: 1px solid #eee;
+}
+
+table tr:nth-child(even) {
+  background: whitesmoke;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+.showgrid .row .col {
+  min-height: 64px;
+  line-height: 64px;
+}
+
+.showgrid .row .col::before {
+  content: attr(class) " ";
+}
+
+.showgrid .row {
+  margin-bottom: 40px;
+  background-color: rgba(74, 84, 239, 0.05);
+}
+
+.showgrid .row .row {
+  margin-bottom: 0;
+}
+
+.showgrid .col {
+  background-color: rgba(74, 84, 239, 0.15);
+}
+
+.showgrid .col+.col:nth-child(even) {
+  background-color: rgba(74, 84, 239, 0.1);
+}

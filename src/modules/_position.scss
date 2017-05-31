@@ -1,0 +1,20 @@
+@mixin based-position($sfx) {
+  .position-absolute#{$sfx} {
+    position: absolute;
+  }
+
+  .position-relative#{$sfx} {
+    position: relative;
+  }
+
+  .position-fixed#{$sfx} {
+    position: fixed;
+  }
+
+  .position-cover#{$sfx} {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}

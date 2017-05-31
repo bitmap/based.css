@@ -1,0 +1,70 @@
+//  Reusable bits of code
+
+@mixin breakpoint($class) {
+  @if $class == xs {
+     @content;
+  }
+  @else if $class == sm {
+     @media (min-width: map_get($based_grid-breakpoints, sm)){
+      @content;
+    }
+  }
+  @else if $class == md {
+     @media (min-width: map_get($based_grid-breakpoints, md)){
+      @content;
+    }
+  }
+  @else if $class == lg {
+     @media (min-width: map_get($based_grid-breakpoints, lg)){
+      @content;
+    }
+  }
+  @else if $class == xl {
+     @media (min-width: map_get($based_grid-breakpoints, xl)){
+      @content;
+    }
+  }
+  @else if $class == xxl {
+     @media (min-width: map_get($based_grid-breakpoints, xxl)){
+      @content;
+    }
+  }
+  @else {
+     @warn"breakpoint mixin supports: xs, sm, md, lg, xl, xxl";
+  }
+}
+
+@mixin font-size($size) {
+  $base: $based_font-size * $based;
+  $h5: $based_font-size / $based_font-scale;
+  $h4: $base * $based_font-scale;
+  $h3: $h4 * $based_font-scale;
+  $h2: $h3 * $based_font-scale;
+  $h1: $h2 * $based_font-scale;
+  $sm: $base * 0.8125;
+
+  @if $size == base {
+    font-size: rem-calc($base);
+  }
+  @else if $size == h5 {
+    font-size: rem-calc($h5);
+  }
+  @else if $size == h4 {
+    font-size: rem-calc($h4);
+  }
+  @else if $size == h3 {
+    font-size: rem-calc($h3);
+  }
+  @else if $size == h2 {
+    font-size: rem-calc($h2);
+  }
+  @else if $size == h1 {
+    font-size: rem-calc($h1);
+  }
+  @else if $size == sm {
+    font-size: rem-calc($sm);
+  }
+  @else {
+     @warn"font-size mixin supports: base, h1, h2, h3, h4, h5, sm";
+  }
+}

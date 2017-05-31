@@ -1,0 +1,25 @@
+@mixin based-display($sfx) {
+  .display-block#{$sfx} {
+    display: block;
+  }
+
+  .display-inline#{$sfx} {
+    display: inline;
+  }
+
+  .display-inline-block#{$sfx} {
+    display: inline-block;
+  }
+
+  .display-table#{$sfx} {
+    display: table;
+  }
+
+  .display-flex#{$sfx} {
+    display: flex;
+  }
+
+  .display-none#{$sfx} {
+    display: none;
+  }
+}

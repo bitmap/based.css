@@ -1,0 +1,23 @@
+{
+  "name": "based.css",
+  "version": "1.0.0",
+  "description": "Based framework",
+  "repository": "https://github.com/bitmap/based.css",
+  "scripts": {
+    "build": "yarn sass && yarn postcss && yarn cssnano && yarn docs",
+    "sass": "node-sass src/based.scss dist/based.css",
+    "postcss": "postcss --use autoprefixer pixrem css-mqpacker -o dist/based.css dist/based.css",
+    "cssnano": "cssnano dist/based.css dist/based.min.css",
+    "docs": "cp dist/based.css docs/assets/"
+  },
+  "author": "Cabe Branson",
+  "license": "MIT",
+  "dependencies": {
+    "autoprefixer": "^7.0.1",
+    "css-mqpacker": "^6.0.0",
+    "cssnano-cli": "^1.0.5",
+    "node-sass": "^4.5.2",
+    "pixrem": "^3.0.2",
+    "postcss-cli": "^4.0.0"
+  }
+}

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="{{ site.lang | default: " en-US " }}">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <title>Based.css</title>
+  <link rel="stylesheet" href="{{ 'assets/style.css?v=' | append: site.github.build_revision | relative_url }}">
+  <link rel="stylesheet" href="{{ 'assets/based.css?v=' | append: site.github.build_revision | relative_url }}">
+  <meta name="viewport" content="width=device-width">
+</head>
+
+{% capture contents %}{% include contents.md %}{% endcapture %}
+{% capture type %}{% include type.md %}{% endcapture %}
+{% capture grid %}{% include grid.md %}{% endcapture %}
+{% capture spacing %}{% include spacing.md %}{% endcapture %}
+{% capture display %}{% include display.md %}{% endcapture %}
+{% capture position %}{% include position.md %}{% endcapture %}
+{% capture lists %}{% include lists.md %}{% endcapture %}
+{% capture background %}{% include background.md %}{% endcapture %}
+{% capture text %}{% include text.md %}{% endcapture %}
+{% capture helpers %}{% include helpers.md %}{% endcapture %}
+
+<body>
+  <div class="wrap">
+    <div class="row">
+      <nav class="col span-2 position-fixed display-none display-block@lg">
+        {{ contents | markdownify }}
+      </nav>
+      <div class="col span-8 span-6@lg offset-2@lg">
+        <main>
+          <section class="py2">{{ content }}</section>
+          <section class="py2">{{ type | markdownify }}</section>
+          <section class="py2 showgrid">{{ grid | markdownify }}</section>
+          <section class="py2">{{ spacing | markdownify }}</section>
+          <section class="py2">{{ display | markdownify }}</section>
+          <section class="py2">{{ position | markdownify }}</section>
+          <section class="py2">{{ lists | markdownify }}</section>
+          <section class="py2">{{ background | markdownify }}</section>
+          <section class="py2">{{ text | markdownify }}</section>
+          <section class="py2">{{ helpers | markdownify }}</section>
+        </main>
+        <footer class="mb2 mb4@lg">
+          <p>&copy 2017 <a href="http://cabe.io">Cabe Branson</a> (<a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>)</p>
+        </footer>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
