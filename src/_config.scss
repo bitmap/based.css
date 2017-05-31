@@ -1,17 +1,14 @@
-$based: 16;
+$based: 16 !default;
 
 // Font size
-$based_font-size: 1rem;
-$based_font-scale: 1.5;
-$based_spacing: 1rem;
-
-// Borders
-$based_border-width: 1px;
+$based_font-size: 1rem !default;
+$based_font-scale: 1.5 !default;
+$based_spacing: 1rem !default;
 
 // Line-height
-$based_line-height: 1.5;
-$based_headline-line-height: 1.125;
-$based_paragraph-line-height: $based_line-height;
+$based_line-height: 1.5 !default;
+$based_headline-line-height: 1.125 !default;
+$based_paragraph-line-height: $based_line-height !default;
 
 // Grid settings
 // sm - 512px @ 16px
@@ -26,12 +23,12 @@ $based_grid-breakpoints: (
   xl: 80rem,
 ) !default;
 
-$based_grid-columns: 8;
-$based_grid-max-width: 64rem;
-$based_grid-gutter-width: $based_spacing;
+$based_grid-columns: 8 !default;
+$based_grid-max-width: 64rem !default;
+$based_grid-gutter-width: $based_spacing !default;
 
 // Spacing
-$based_spacing-multiplier: 4;
+$based_spacing-multiplier: 4 !default;
 $based_spacing-sides: (
   default: default,
   horizontal: horizontal,
