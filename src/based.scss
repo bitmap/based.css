@@ -1,13 +1,10 @@
 @charset 'UTF-8';
 
-// Dependencies
+// Config
 @import 'config';
-@import 'lib/mixins';
-@import 'lib/functions';
 
 // Modules
 @import 'modules/root';
-@import 'modules/type';
 @import 'modules/grid';
 @import 'modules/position';
 @import 'modules/text';
@@ -23,7 +20,6 @@
 // Static module includes
 @mixin based-core {
   @include based-root;
-  @include based-type;
   @include based-clearfix;
   @include based-helpers;
   @include based-bg;
@@ -44,18 +40,14 @@
 }
 
 // Magic
+$responsiveSuffix: '' !default;
+@include based-core;
+@include based-responsive($responsiveSuffix);
+
 @each $breakpoint in $based_breakpoints {
-  @include breakpoint($breakpoint){
-    @if $breakpoint != 'xs' {
-      $responsiveSuffix: '#{\@}#{$breakpoint}';
-      @include based-responsive($responsiveSuffix);
-    }
-    @else {
-      // Static
-      @include based-core;
-      // Responsive
-      $responsiveSuffix: '';
-      @include based-responsive($responsiveSuffix);
-    }
+  $query: map-get($based_grid-breakpoints, $breakpoint);
+  @media (min-width: #{$query}) {
+    $responsiveSuffix: '#{\@}#{$breakpoint}';
+    @include based-responsive($responsiveSuffix);
   }
 }

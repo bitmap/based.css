@@ -11,7 +11,6 @@
 </head>
 
 {% capture contents %}{% include contents.md %}{% endcapture %}
-{% capture type %}{% include type.md %}{% endcapture %}
 {% capture grid %}{% include grid.md %}{% endcapture %}
 {% capture spacing %}{% include spacing.md %}{% endcapture %}
 {% capture display %}{% include display.md %}{% endcapture %}
@@ -30,7 +29,6 @@
       <div class="col span-8 span-6@lg offset-2@lg">
         <main>
           <section class="py2">{{ content }}</section>
-          <section class="py2">{{ type | markdownify }}</section>
           <section class="py2 showgrid">{{ grid | markdownify }}</section>
           <section class="py2">{{ spacing | markdownify }}</section>
           <section class="py2">{{ display | markdownify }}</section>

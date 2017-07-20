@@ -1,14 +1,5 @@
 $based: 16 !default;
-
-// Font size
-$based_font-size: 1rem !default;
-$based_font-scale: 1.5 !default;
 $based_spacing: 1rem !default;
-
-// Line-height
-$based_line-height: 1.5 !default;
-$based_headline-line-height: 1.125 !default;
-$based_paragraph-line-height: $based_line-height !default;
 
 // Grid settings
 // sm - 512px @ 16px
@@ -16,7 +7,6 @@ $based_paragraph-line-height: $based_line-height !default;
 // lg - 1024px @ 16px
 // xl - 1280px @ 16px
 $based_grid-breakpoints: (
-  xs: 0,
   sm: 32rem,
   md: 48rem,
   lg: 64rem,
