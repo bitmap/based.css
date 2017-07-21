@@ -1,53 +1,51 @@
-@mixin all-sides($root, $pfx, $sfx, $total, $i) {
-   @if ($root == 'padding'){}
-  @else if ($i == 0) {
+@mixin all-sides($prop, $pfx, $sfx, $total, $i) {
+  @if ($prop == 'padding') {
+  } @else if ($i == 0) {
     .#{$pfx}-auto#{$sfx} {
-      #{$root}: auto;
+      #{$prop}: auto;
     }
   }
 
   .#{$pfx}#{$i}#{$sfx} {
-    #{$root}: $total;
+    #{$prop}: $total;
   }
 }
-@mixin two-sides($side, $side1, $side2, $root, $pfx, $sfx, $total, $i) {
-   @if ($root == 'padding'){}
-  @else if ($i == 0) {
+@mixin two-sides($side, $side1, $side2, $prop, $pfx, $sfx, $total, $i) {
+  @if ($prop == 'padding') {
+  } @else if ($i == 0) {
     .#{$pfx}#{$side}-auto#{$sfx} {
-      #{$root}-#{$side1}: auto;
-      #{$root}-#{$side2}: auto;
+      #{$prop}-#{$side1}: auto;
+      #{$prop}-#{$side2}: auto;
     }
   }
 
   .#{$pfx}#{$side}#{$i}#{$sfx} {
-    #{$root}-#{$side1}: $total;
-    #{$root}-#{$side2}: $total;
+    #{$prop}-#{$side1}: $total;
+    #{$prop}-#{$side2}: $total;
   }
 }
-@mixin one-side($sides, $side, $root, $pfx, $sfx, $total, $i) {
-   @if ($root == 'padding'){}
-  @else if ($i == 0) {
+@mixin one-side($sides, $side, $prop, $pfx, $sfx, $total, $i) {
+  @if ($prop == 'padding') {
+  } @else if ($i == 0) {
     .#{$pfx}#{$side}-auto#{$sfx} {
-      #{$root}-#{$sides}: auto;
+      #{$prop}-#{$sides}: auto;
     }
   }
 
   .#{$pfx}#{$side}#{$i}#{$sfx} {
-    #{$root}-#{$sides}: $total;
+    #{$prop}-#{$sides}: $total;
   }
 }
 // Spacing
-@mixin based-spacing($root, $value, $n, $sfx) {
+@mixin based-spacing($prop, $value, $n, $sfx) {
   // $pfx will change the prefix class
   $pfx: '';
-  @if ($root == 'margin') {
+  @if ($prop == 'margin') {
     $pfx: 'm';
-  }
-  @else if ($root == 'padding') {
+  } @else if ($prop == 'padding') {
     $pfx: 'p';
-  }
-  @else {
-     @error 'Sorry, but `#{$root}` is not supported.';
+  } @else {
+    @error 'Sorry, but `#{$prop}` is not supported.';
   }
   // Generate classes
   @each $side in map_keys($based_spacing-sides) {
@@ -55,16 +53,13 @@
     @for $i from 0 through $n {
       $total: ($value * $i);
       @if ($side == default) {
-         @include all-sides($root, $pfx, $sfx, $total, $i);
-      }
-      @else if ($side == vertical) {
-         @include two-sides( 'y', top, bottom, $root, $pfx, $sfx, $total, $i);
-      }
-      @else if ($side == horizontal) {
-         @include two-sides( 'x', left, right, $root, $pfx, $sfx, $total, $i);
-      }
-      @else {
-         @include one-side($sides, $side, $root, $pfx, $sfx, $total, $i);
+        @include all-sides($prop, $pfx, $sfx, $total, $i);
+      } @else if ($side == vertical) {
+        @include two-sides('y', top, bottom, $prop, $pfx, $sfx, $total, $i);
+      } @else if ($side == horizontal) {
+        @include two-sides('x', left, right, $prop, $pfx, $sfx, $total, $i);
+      } @else {
+        @include one-side($sides, $side, $prop, $pfx, $sfx, $total, $i);
       }
     }
   }

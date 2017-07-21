@@ -35,7 +35,7 @@
   }
 }
 @mixin based-flex($sfx) {
-   @for $i from 0 through $based_grid-columns{
+  @for $i from 0 through $based_grid-columns {
     .span-#{$i}#{$sfx} {
       flex: 0 0 percentage((1 / $based_grid-columns) * $i);
       max-width: percentage((1 / $based_grid-columns) * $i);
