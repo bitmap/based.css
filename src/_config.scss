@@ -1,5 +1,18 @@
-$based: 16 !default;
+// Based.css default settings
+
+// Spacing
 $based_spacing: 1rem !default;
+$based_spacing-multiplier: 4 !default;
+$based_spacing-sides: (
+    default: default,
+    horizontal: horizontal,
+    vertical: vertical,
+    t: top,
+    b: bottom,
+    l: left,
+    r: right
+  )
+  !default;
 
 // Grid settings
 // sm - 512px @ 16px
@@ -7,27 +20,33 @@ $based_spacing: 1rem !default;
 // lg - 1024px @ 16px
 // xl - 1280px @ 16px
 $based_grid-breakpoints: (
-  sm: 32rem,
-  md: 48rem,
-  lg: 64rem,
-  xl: 80rem,
-) !default;
+    sm: 32rem,
+    md: 48rem,
+    lg: 64rem,
+    xl: 80rem
+  )
+  !default;
 
 $based_grid-columns: 8 !default;
 $based_grid-max-width: 64rem !default;
 $based_grid-gutter-width: $based_spacing !default;
 
-// Spacing
-$based_spacing-multiplier: 4 !default;
-$based_spacing-sides: (
-  default: default,
-  horizontal: horizontal,
-  vertical: vertical,
-  t: top,
-  b: bottom,
-  l: left,
-  r: right,
-) !default;
+// Feature flags
+$based-root: true !default;
+$based-clearfix: true !default;
+$based-helpers: true !default;
+$based-bg: true !default;
+$based-list: true !default;
+$based-media: true !default;
+$based-grid: true !default;
+$based-flex: true !default;
+$based-position: true !default;
+$based-text: true !default;
+$based-display: true !default;
+$based-float: true !default;
+$based-margin: true !default;
+$based-padding: true !default;
+$based-responsive: true !default;
 
 // Maps for looping
-$based_breakpoints: map_keys($based_grid-breakpoints) !default;
+$based_breakpoints: map_keys($based_grid-breakpoints);

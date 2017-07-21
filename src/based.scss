@@ -19,35 +19,65 @@
 
 // Static module includes
 @mixin based-core {
-  @include based-root;
-  @include based-clearfix;
-  @include based-helpers;
-  @include based-bg;
-  @include based-list;
-  @include based-media;
-  @include based-grid;
+  @if ($based-root) {
+    @include based-root;
+  }
+  @if ($based-clearfix) {
+    @include based-clearfix;
+  }
+  @if ($based-helpers) {
+    @include based-helpers;
+  }
+  @if ($based-bg) {
+    @include based-bg;
+  }
+  @if ($based-list) {
+    @include based-list;
+  }
+  @if ($based-media) {
+    @include based-media;
+  }
+  @if ($based-grid) {
+    @include based-grid;
+  }
 }
 
 // Responsive module includes
-@mixin based-responsive($suffix) {
-  @include based-flex($suffix);
-  @include based-position($suffix);
-  @include based-text($suffix);
-  @include based-display($suffix);
-  @include based-float($suffix);
-  @include based-spacing('padding', $based_spacing, $based_spacing-multiplier, $suffix);
-  @include based-spacing('margin', $based_spacing, $based_spacing-multiplier, $suffix);
+@mixin based-core-responsive($suffix) {
+  @if ($based-flex) {
+    @include based-flex($suffix);
+  }
+  @if ($based-position) {
+    @include based-position($suffix);
+  }
+  @if ($based-text) {
+    @include based-text($suffix);
+  }
+  @if ($based-display) {
+    @include based-display($suffix);
+  }
+  @if ($based-float) {
+    @include based-float($suffix);
+  }
+  @if ($based-padding) {
+    @include based-spacing('padding', $based_spacing, $based_spacing-multiplier, $suffix);
+  }
+  @if ($based-margin) {
+    @include based-spacing('margin', $based_spacing, $based_spacing-multiplier, $suffix);
+  }
 }
 
 // Magic
 $responsiveSuffix: '' !default;
 @include based-core;
-@include based-responsive($responsiveSuffix);
+@include based-core-responsive($responsiveSuffix);
 
-@each $breakpoint in $based_breakpoints {
-  $query: map-get($based_grid-breakpoints, $breakpoint);
-  @media (min-width: #{$query}) {
-    $responsiveSuffix: '#{\@}#{$breakpoint}';
-    @include based-responsive($responsiveSuffix);
+@if ($based-responsive) {
+  @each $breakpoint in $based_breakpoints {
+    $query: map-get($based_grid-breakpoints, $breakpoint);
+    @media (min-width: #{$query}) {
+      $responsiveSuffix: '#{\@}#{$breakpoint}';
+      @include based-core-responsive($responsiveSuffix);
+    }
   }
 }
