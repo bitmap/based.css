@@ -118,56 +118,118 @@ By default, _all coulmns read left to right_ in the order they appear in the DOM
 </div>
 
 ### Aligning Columns
-Adding these classes to the `row` allows flexbox to work its magic. `align-[whatever]` refer to the _alignment of all columns_ *inside* the container.
+Adding these classes to the `row` allows flexbox to work its magic. `align-[whatever]` refers to the _vertical alignment_ inside the container. `justify-[whatever]` controls the _horizontal alignment_.
 
-They can be mixed and matched in lieu of the push/pull classes to align all columns.
+They can be mixed and matched in lieu of the push/pull classes to align columns.
 
-#### align-bottom align-left
-<div class="row align-bottom align-left" style="height: 128px;">
+#### align-end justify-start
+<div class="row align-end justify-start" style="height: 128px;">
   <div class="col span-3"></div>
   <div class="col span-3"></div>
 </div>
 
-#### align-top align-center
-<div class="row align-top align-center" style="height: 128px;">
+#### align-start justify-center
+<div class="row align-start justify-center" style="height: 128px;">
   <div class="col span-3"></div>
   <div class="col span-3"></div>
 </div>
 
-#### align-middle align-right
-<div class="row align-middle align-right" style="height: 128px;">
+#### align-center justify-end
+<div class="row align-center justify-end" style="height: 128px;">
   <div class="col span-3"></div>
   <div class="col span-3"></div>
 </div>
 
-Adding `align-top`, `align-middle`, and `align-bottom` to a `col` element applies the alignment individually for more advanced layouts. Columns appear in the same order as the DOM. _These override the alignment class on the parent_, so be careful.
+Adding `align-start`, `align-center`, and `align-end` to a `col` element applies the alignment individually for more advanced layouts. Columns appear in the same order as the DOM. _These override the alignment class on the parent_, so be careful.
 
 <div class="row" style="height: 128px;">
-  <div class="col span-2 align-top"></div>
-  <div class="col span-3 align-bottom"></div>
-  <div class="col span-3 align-middle"></div>
+  <div class="col span-2 align-start"></div>
+  <div class="col span-3 align-end"></div>
+  <div class="col span-3 align-center"></div>
 </div>
+
+### Aligning Rows
+You can align everything using the `content-[whatever]` classes.
+
+#### content-start
+<div class="row content-start" style="height: 256px;">
+  <div class="col span-2"></div>
+  <div class="col span-3"></div>
+  <div class="col span-3"></div>
+  <div class="col span-3"></div>
+  <div class="col span-1"></div>
+  <div class="col span-4"></div>
+</div>
+
+#### content-center
+<div class="row content-center" style="height: 256px;">
+  <div class="col span-2"></div>
+  <div class="col span-3"></div>
+  <div class="col span-3"></div>
+  <div class="col span-3"></div>
+  <div class="col span-1"></div>
+  <div class="col span-4"></div>
+</div>
+
+#### content-end
+<div class="row content-end" style="height: 256px;">
+  <div class="col span-2"></div>
+  <div class="col span-3"></div>
+  <div class="col span-3"></div>
+  <div class="col span-3"></div>
+  <div class="col span-1"></div>
+  <div class="col span-4"></div>
+</div>
+
 
 ### Space
-
-`space-between` and `space-around` help space out elements by filling the space around or between elements. You must apply this class to the `row`.
-#### space-between
-<div class="row space-between">
+`justify-space-between`, `justify-space-around`, and `justify-space-evenly`  help space out elements by filling the space around or between elements. You must apply this class to the `row`.
+#### justify space-between
+<div class="row justify-space-between">
   <div class="col span-2"></div>
   <div class="col span-2"></div>
   <div class="col span-2"></div>
 </div>
 
-#### space-around
-<div class="row space-around">
+#### justify-space-around
+<div class="row justify-space-around">
   <div class="col span-2"></div>
   <div class="col span-2"></div>
   <div class="col span-2"></div>
+</div>
+
+#### justify-space-evenly
+<div class="row justify-space-evenly">
+  <div class="col span-2"></div>
+  <div class="col span-2"></div>
+  <div class="col span-2"></div>
+</div>
+
+You can also apply this to columns that wrap into multiple rows using the `content-space-between` and `content-space-around` classes.
+
+#### content-space-between
+<div class="row content-space-between" style="height: 256px;">
+  <div class="col span-2"></div>
+  <div class="col span-3"></div>
+  <div class="col span-3"></div>
+  <div class="col span-3"></div>
+  <div class="col span-1"></div>
+  <div class="col span-4"></div>
+</div>
+
+#### content-space-around
+<div class="row content-space-around" style="height: 256px;">
+  <div class="col span-2"></div>
+  <div class="col span-3"></div>
+  <div class="col span-3"></div>
+  <div class="col span-3"></div>
+  <div class="col span-1"></div>
+  <div class="col span-4"></div>
 </div>
 
 ### Order
 By default the `order` property is `0`, so elements stack as as expected. The `order-0` through `order-12` change the order to `0` through `12`, respectively.
-<div class="row space-between">
+<div class="row">
   <div class="col span-4 order-8">(first in DOM)</div>
   <div class="col span-4 order-4">(last in DOM)</div>
 </div>
