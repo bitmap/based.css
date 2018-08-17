@@ -82,7 +82,7 @@ The Based grid system has four tiers of classes: default (phones), `@sm` (tablet
   <div class="col span-8 span-4@lg"></div>
 </div>
 <div class="row">
-  <div class="col span-6 span-2@md"></div>
+  <div class="col span-2@md"></div>
   <div class="col span-8 span-6@md"></div>
 </div>
 <div class="row">
@@ -157,7 +157,7 @@ You can align everything using the `content-[whatever]` classes.
   <div class="col span-3"></div>
   <div class="col span-3"></div>
   <div class="col span-3"></div>
-  <div class="col span-1"></div>
+  <div class="col"></div>
   <div class="col span-4"></div>
 </div>
 
@@ -167,7 +167,7 @@ You can align everything using the `content-[whatever]` classes.
   <div class="col span-3"></div>
   <div class="col span-3"></div>
   <div class="col span-3"></div>
-  <div class="col span-1"></div>
+  <div class="col"></div>
   <div class="col span-4"></div>
 </div>
 
@@ -177,7 +177,7 @@ You can align everything using the `content-[whatever]` classes.
   <div class="col span-3"></div>
   <div class="col span-3"></div>
   <div class="col span-3"></div>
-  <div class="col span-1"></div>
+  <div class="col"></div>
   <div class="col span-4"></div>
 </div>
 
@@ -213,7 +213,7 @@ You can also apply this to columns that wrap into multiple rows using the `conte
   <div class="col span-3"></div>
   <div class="col span-3"></div>
   <div class="col span-3"></div>
-  <div class="col span-1"></div>
+  <div class="col"></div>
   <div class="col span-4"></div>
 </div>
 
@@ -223,7 +223,7 @@ You can also apply this to columns that wrap into multiple rows using the `conte
   <div class="col span-3"></div>
   <div class="col span-3"></div>
   <div class="col span-3"></div>
-  <div class="col span-1"></div>
+  <div class="col"></div>
   <div class="col span-4"></div>
 </div>
 
