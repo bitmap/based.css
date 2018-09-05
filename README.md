@@ -3,7 +3,7 @@
 Based is a barebones CSS framework for prototype or production. Based features an extensive flexbox grid system and OOCSS classes that don't make assumptions about your application's styles or override any browser defaults.
 
 ## Docs
-[Read up on Based](http://cabe.io/based.css).
+[Read up on Based](https://bitmap.github.io/based.css).
 
 ## Installation
 
