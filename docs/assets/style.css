@@ -65,8 +65,8 @@ code {
   white-space: nowrap;
 }
 
-td code {
-  background: transparent;
+table {
+  width: 100%;
 }
 
 table td,
@@ -80,6 +80,10 @@ table th {
 
 table tr:nth-child(even) {
   background: whitesmoke;
+}
+
+table td code {
+  background: transparent;
 }
 
 hr {
