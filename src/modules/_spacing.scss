@@ -52,11 +52,11 @@
     $sides: map-get($based_spacing-sides, #{$side});
     @for $i from 0 through $n {
       $total: ($value * $i);
-      @if ($side == default) {
+      @if ($side == all) {
         @include all-sides($prop, $pfx, $sfx, $total, $i);
-      } @else if ($side == vertical) {
+      } @else if ($side == y) {
         @include two-sides('y', top, bottom, $prop, $pfx, $sfx, $total, $i);
-      } @else if ($side == horizontal) {
+      } @else if ($side == x) {
         @include two-sides('x', left, right, $prop, $pfx, $sfx, $total, $i);
       } @else {
         @include one-side($sides, $side, $prop, $pfx, $sfx, $total, $i);

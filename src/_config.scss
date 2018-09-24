@@ -4,9 +4,9 @@
 $based_spacing: 1rem !default;
 $based_spacing-multiplier: 4 !default;
 $based_spacing-sides: (
-    default: default,
-    horizontal: horizontal,
-    vertical: vertical,
+    all: all,
+    x: x,
+    y: y,
     t: top,
     b: bottom,
     l: left,
