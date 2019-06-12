@@ -7,8 +7,8 @@
   "scripts": {
     "build": "npm run sass && npm run postcss && npm run cssnano && npm run docs",
     "sass": "node-sass src/based.scss dist/based.css",
-    "postcss": "postcss --use autoprefixer css-mqpacker -o dist/based.css dist/based.css",
-    "cssnano": "cssnano dist/based.css dist/based.min.css",
+    "postcss": "postcss dist/based.css --use autoprefixer css-mqpacker -o dist/based.css",
+    "cssnano": "postcss dist/based.css --use cssnano --no-map -o dist/based.min.css",
     "docs": "cp dist/based.css docs/assets/"
   },
   "author": "Cabe Branson",
@@ -16,7 +16,7 @@
   "devDependencies": {
     "autoprefixer": "^9.6.0",
     "css-mqpacker": "^7.0.0",
-    "cssnano-cli": "^1.0.5",
+    "cssnano": "^4.1.10",
     "node-sass": "^4.12.0",
     "postcss-cli": "^6.1.2"
   }
